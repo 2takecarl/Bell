@@ -18,9 +18,69 @@
     <ClCompile Include="source\Bell\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\Bell\Engine\engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Bell\Window\app.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="source\Bell\Shaders\vert.spv" />
     <None Include="source\Bell\Shaders\frag.spv" />
+    <None Include="source\Bell\Core\Shaders\shader_compile.bat">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="source\Bell\Core\Shaders\fragment.spv" />
+    <None Include="source\Bell\Core\Shaders\vertex.spv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Bell\Engine\engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\instance.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\swapchain.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\queue_families.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\device.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\frame.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Core\Shaders\shaders.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Engine\pipeline.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Render\framebuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Render\commands.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Render\sync.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Bell\Window\app.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="source\Bell\Core\Shaders\shader.vert" />
+    <Text Include="source\Bell\Core\Shaders\shader.frag" />
+    <Text Include="absolutelinking.txt" />
   </ItemGroup>
 </Project>

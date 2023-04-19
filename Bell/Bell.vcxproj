@@ -70,6 +70,18 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(SolutionDir)Bell\source\Bell;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(SolutionDir)Bell\source\Bell;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)Bell\source\Bell;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)Bell\source\Bell;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -78,6 +90,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\glm;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\Vulkan\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -96,6 +109,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\glm;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\Vulkan\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -114,6 +128,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\glm;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\Vulkan\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -132,6 +147,7 @@
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)Dependencies\glm;$(SolutionDir)Dependencies\GLFW\include;$(SolutionDir)Dependencies\Vulkan\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -143,11 +159,37 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="source\Bell\Engine\engine.cpp" />
     <ClCompile Include="source\Bell\main.cpp" />
+    <ClCompile Include="source\Bell\Window\app.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="source\Bell\Core\Shaders\fragment.spv" />
+    <None Include="source\Bell\Core\Shaders\shader_compile.bat" />
+    <None Include="source\Bell\Core\Shaders\vertex.spv" />
     <None Include="source\Bell\Shaders\frag.spv" />
     <None Include="source\Bell\Shaders\vert.spv" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Bell\Core\Shaders\shaders.h" />
+    <ClInclude Include="source\Bell\Engine\config.h" />
+    <ClInclude Include="source\Bell\Engine\device.h" />
+    <ClInclude Include="source\Bell\Engine\engine.h" />
+    <ClInclude Include="source\Bell\Engine\frame.h" />
+    <ClInclude Include="source\Bell\Engine\instance.h" />
+    <ClInclude Include="source\Bell\Engine\logging.h" />
+    <ClInclude Include="source\Bell\Engine\pipeline.h" />
+    <ClInclude Include="source\Bell\Engine\queue_families.h" />
+    <ClInclude Include="source\Bell\Engine\swapchain.h" />
+    <ClInclude Include="source\Bell\Render\commands.h" />
+    <ClInclude Include="source\Bell\Render\framebuffer.h" />
+    <ClInclude Include="source\Bell\Render\sync.h" />
+    <ClInclude Include="source\Bell\Window\app.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="absolutelinking.txt" />
+    <Text Include="source\Bell\Core\Shaders\shader.frag" />
+    <Text Include="source\Bell\Core\Shaders\shader.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
